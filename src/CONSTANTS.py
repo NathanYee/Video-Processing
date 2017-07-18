@@ -17,6 +17,7 @@ VID_KEYS   = ['D008_03HD', 'D0232_04HD', 'D0442_06HD', 'D0443_05HD', 'D0673_04HD
 VID_DIR    = 'video_dir'
 IMG_DIR    = 'imgs'
 XML_DIR    = 'xmls'
+PRED_DIR   = 'preds'
 DIR_KEYS   = [VID_DIR, IMG_DIR, XML_DIR]
 
 SRC_VID    = 'source_video_path'
@@ -27,6 +28,7 @@ for VID in VID_KEYS:
     DIR_DICT[VID][VID_DIR] = '{}{}/'.format(BASE_DIR, VID)
     DIR_DICT[VID][IMG_DIR] = '{}{}/{}/'.format(BASE_DIR, VID, IMG_DIR)
     DIR_DICT[VID][XML_DIR] = '{}{}/{}/'.format(BASE_DIR, VID, XML_DIR)
+    DIR_DICT[VID][XML_DIR] = '{}{}/{}/'.format(BASE_DIR, VID, PRED_DIR)
     DIR_DICT[VID][SRC_VID] = '{}{}/{}{}'.format(SOURCE_DIR, VID, VID, VID_EXT)
 
 # resulting simple annotation for Keras frcnn
