@@ -46,10 +46,10 @@ def indent(elem, level=0):
     :param level: number of additional tabs to append
     :type  level: integer
     """
-    i = "\n" + level * "\t"
+    i = "\n" + level * "  "
     if len(elem):
         if not elem.text or not elem.text.strip():
-            elem.text = i + "\t"
+            elem.text = i + "  "
         if not elem.tail or not elem.tail.strip():
             elem.tail = i
         for elem in elem:
@@ -109,7 +109,7 @@ def generate_xml(filename, path, object_list, folder=c.IMG_DIR, database=c.DATAB
     :param depth: the number of channels in the video
     :param segmented: 1 if objects are segmented, 0 if not
     """
-    new_root = ElementTree.Element(tag='annotation', attrib={'verified':'"no"'})
+    new_root = ElementTree.Element(tag='annotation', attrib={'verified':'no'})
     new_root.append(element_with_text('folder', folder))
     new_root.append(element_with_text('filename', filename))
     new_root.append(element_with_text('path', path))
