@@ -131,6 +131,6 @@ def generate_xml(filename, path, object_list, folder=c.IMG_DIR, database=c.DATAB
 
     indent(new_root)
     new_tree = ElementTree.ElementTree(new_root)
-    xml_path = path.replace('imgs', 'xmls').replace('png', 'xml')
+    xml_path = path.replace('imgs', 'xml_preds').replace('png', 'xml')
     new_tree.write(xml_path)
     
