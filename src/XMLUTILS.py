@@ -85,7 +85,7 @@ def create_object_element(object_):
     object_element.append(element_with_text('truncated',  get_truncated_value(object_)))
     object_element.append(element_with_text('difficult',  c.DIFFICULT))
 
-    bndbox_element = ElementTree.Element(tag='object')
+    bndbox_element = ElementTree.Element(tag='bndbox')
     bndbox_element.append(element_with_text('xmin',  object_['xmin']))
     bndbox_element.append(element_with_text('ymin',  object_['ymin']))
     bndbox_element.append(element_with_text('xmax',  object_['xmax']))
