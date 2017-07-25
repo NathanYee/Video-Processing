@@ -38,12 +38,6 @@ for VID in VID_KEYS:
     DIR_DICT[VID][IMG_PRED_DIR] = '{}{}/{}/'.format(BASE_DIR, VID, IMG_PRED_DIR)
     DIR_DICT[VID][XML_PRED_DIR] = '{}{}/{}/'.format(BASE_DIR, VID, XML_PRED_DIR)
     DIR_DICT[VID][SRC_VID]      = '{}{}/{}{}'.format(SOURCE_DIR, VID, VID, VID_EXT)
-
-# INCREMENTS is default 5 for all videos. On Fast videos, use a slower increment
-INCREMENTS = {}
-for VID in VID_KEYS:
-    INCREMENTS[VID] = 5
-INCREMENTS['D0904_D3HD'] = 3
     
 # path for simple annotation for Keras frcnn
 ANN_PATH = BASE_DIR + 'simple_annotations.txt'
