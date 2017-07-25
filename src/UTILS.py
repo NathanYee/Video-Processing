@@ -17,3 +17,15 @@ def append_to_file(filepath, data):
     """
     with open(filepath, 'a') as f:
         f.write(str(data) + '\n')
+        
+def clear_DS(file, filepath):
+    """
+    Clears the automatically created .DS_Store files that OSX Finder creates
+
+    :param file: the name of the file
+    :type  file: string
+    :param filepath: the full filepath of the file
+    :type  filepath: string
+    """
+    if file == '.DS_Store':
+        os.unlink(filepath)
