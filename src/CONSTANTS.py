@@ -1,6 +1,18 @@
+import os
+
 # basic constants
 CLASSES    = ['BENTHOCODON','ECHINOCREPIS','PENIAGONE_SP_1','PENIAGONE_SP_2',
               'PENIAGONE_SP_A','PENIAGONE_VITRAE','SCOTOPLANES_GLOBOSA','ELPIDIA']
+
+VID_CLASSES= ['BENTHOCODON','ECHINOCREPIS','PENIAGONE_SP_2', 'PENIAGONE_PAPILLATA',
+              'PENIAGONE_SP_A','PENIAGONE_VITRAE','SCOTOPLANES_GLOBOSA']
+
+ALL_CLASSES= ['ELPIDIA','PENIAGONE_PAPILLATA','ECHINOCREPIS','SCOTOPLANES_GLOBOSA',
+              'ONEIROPHANTA_MUTABILIS_COMPLEX','PENIAGONE_SP_1','LONG_WHITE',
+              'SYNALLACTIDAE','PENIAGONE_VITRAE','FUNGIACYATHUS_MARENZELLERI',
+              'CYSTECHINUS_LOVENI','PENIAGONE_SP_A','BENTHOCODON','TJALFIELLA',
+              'PENIAGONE_SP_2','FISH']
+
 VID_EXT    = '.mov'
 IMG_EXT    = '.png'
 XML_EXT    = '.xml'
@@ -14,8 +26,8 @@ VID_KEYS   = ['D008_03HD', 'D0232_03HD', 'D0232_04HD', 'D0442_06HD',
               'D0443_05HD', 'D0673_04HD', 'D0772_09HD', 'D0772_10HD',
               'D0904_D3HD']
 TRAIN_VID_KEYS = ['D008_03HD', 'D0232_04HD', 'D0442_06HD', 'D0443_05HD',
-                  'D0673_04HD', 'D0772_09HD']
-TEST_VID_KEYS  = ['D0232_03HD', 'D0772_10HD', 'D0904_D3HD']
+                  'D0673_04HD', 'D0772_09HD', 'D0904_D3HD']
+TEST_VID_KEYS  = ['D0232_03HD', 'D0772_10HD']
 
 
 # keys for the dict of each video
@@ -42,6 +54,10 @@ for VID in VID_KEYS:
 # path for simple annotation for Keras frcnn
 ANN_PATH = BASE_DIR + 'simple_annotations.txt'
 TEST_ANN_PATH = BASE_DIR + 'test_simple_annotations.txt'
+
+# crop directories
+CROP_DIR = os.path.join(BASE_DIR, 'crops')
+CROP_CLASS_DIRS = [os.path.join(CROP_DIR, CLASS) for CLASS in ALL_CLASSES]
 
 # xml constants
 DATABASE='Unknown'

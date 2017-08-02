@@ -1,3 +1,4 @@
+import os
 def remove_file_contents(filepath):
     """
     clears the file located at filepath of all its contents
