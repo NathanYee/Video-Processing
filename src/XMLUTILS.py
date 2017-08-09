@@ -19,9 +19,23 @@ def open_xml_file(filename):
     return annotation
 
 
+def contains_objects(annotation):
+    """
+    determines whether or not the annotation contains at least one
+    object
+
+    :param annotation: a pascal VOC XML annotation
+    :type  annotation: Element
+
+    :returns: true - if annotation contains object
+    :rtype  : bool
+    """
+    return len(annotation.findall('object')) > 0
+
+
 def element_with_text(tag, text, attribute={}):
     """
-    Adds text to an ElementTree Element
+    helper function that adds text to an ElementTree Element
 
     :param tag: the tag for the Element
     :type  tag: string
@@ -39,17 +53,21 @@ def element_with_text(tag, text, attribute={}):
 
 def indent(elem, level=0):
     """
-    Modifies an element in place to pretty print XML VOC style XML files
+    modifies an element in place to pretty print XML VOC style XML files.
+    I am choosing to pretty print with two spaces
+    
+    http://effbot.org/zone/element-lib.htm
 
     :param elem: the root of the XML tree
     :type  elem: Element
     :param level: number of additional tabs to append
     :type  level: integer
     """
-    i = "\n" + level * "  "
+    whitespace = "  "
+    i = "\n" + level * whitespace
     if len(elem):
         if not elem.text or not elem.text.strip():
-            elem.text = i + "  "
+            elem.text = i + whitespace
         if not elem.tail or not elem.tail.strip():
             elem.tail = i
         for elem in elem:
@@ -63,7 +81,8 @@ def indent(elem, level=0):
 
 def get_truncated_value(object_):
     """
-
+    determine if a standard 960x540 image has a truncated object 
+    
     :param object_: the data structure that contains all necessary information to create an Element object
     :return value: the value for truncated
     """
@@ -75,6 +94,7 @@ def get_truncated_value(object_):
 
 def create_object_element(object_):
     """
+    create a PASCAL VOC style object element
 
     :param object_: the data structure that contains all necessary information to create an Element object
     :return object_element:
@@ -126,6 +146,7 @@ def generate_xml(filename, path, object_list, folder=c.IMG_DIR, database=c.DATAB
 
     new_root.append(element_with_text('segmented', segmented))
 
+    # iterate through object list to create individual objects
     for object_ in object_list:
         new_root.append(create_object_element(object_))
 
