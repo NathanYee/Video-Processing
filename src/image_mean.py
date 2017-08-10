@@ -3,10 +3,13 @@
 # This notebook calculates the mean (by color channel) of the training images.
 # This value is used in the keras-frcnn config.py file for network training and testing.
 
+import sys
 import os
-import CONSTANTS as c
-import IMAGEUTILS as im
-import XMLUTILS as xu
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+import tools.CONSTANTS as c
+import tools.IMAGEUTILS as im
+import tools.XMLUTILS as xu
 import numpy as np
 
 

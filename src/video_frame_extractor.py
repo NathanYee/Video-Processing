@@ -1,7 +1,10 @@
-import CONSTANTS as c
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+import tools.CONSTANTS as c
 import multiprocessing
 import subprocess
-import os
 
 
 class Extractor():

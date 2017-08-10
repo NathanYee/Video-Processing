@@ -1,7 +1,10 @@
+import sys
 import os
-import CONSTANTS as c
-import IMAGEUTILS as im
-import UTILS as u
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+import tools.CONSTANTS as c
+import tools.IMAGEUTILS as im
+import tools.UTILS as u
 import pickle
 from time import sleep
 

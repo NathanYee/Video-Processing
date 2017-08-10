@@ -2,9 +2,12 @@
 # 
 # Creates the directories of frcnn_data if they do not exist
 
+import sys
 import os
-import CONSTANTS as c
-import UTILS as u
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+import tools.CONSTANTS as c
+import tools.UTILS as u
 
 
 if __name__ == '__main__':

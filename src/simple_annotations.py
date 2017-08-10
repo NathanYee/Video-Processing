@@ -1,7 +1,10 @@
+import sys
 import os
-import CONSTANTS as c
-import UTILS as u
-import XMLUTILS as xu
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+import tools.CONSTANTS as c
+import tools.UTILS as u
+import tools.XMLUTILS as xu
 
 
 class SimpleAnnotator():

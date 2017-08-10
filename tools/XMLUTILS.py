@@ -1,5 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from xml.etree import ElementTree
-import CONSTANTS as c
+import tools.CONSTANTS as c
 
 
 def open_xml_file(filename):
