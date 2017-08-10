@@ -1,15 +1,8 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import os
 import CONSTANTS as c
 import UTILS as u
 import XMLUTILS as xu
 
-
-# In[2]:
 
 class SimpleAnnotator():
     """
@@ -116,19 +109,8 @@ class SimpleAnnotator():
                 print("Processed: " + root)
 
 
-# In[3]:
-
 train_annotator = SimpleAnnotator(c.TRAIN_VID_KEYS, c.ANN_PATH)
 train_annotator.process_files()
 
-
-# In[4]:
-
 test_annotator = SimpleAnnotator(c.TEST_VID_KEYS, c.TEST_ANN_PATH)
 test_annotator.process_files()
-
-
-# In[ ]:
-
-
-

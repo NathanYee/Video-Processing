@@ -1,15 +1,8 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import CONSTANTS as c
 import multiprocessing
 import subprocess
 import os
 
-
-# In[2]:
 
 class Extractor():
     def __init__(self, video_name, increment=5):
@@ -102,8 +95,6 @@ class Extractor():
             return False
 
 
-# In[3]:
-
 class Manager():
     def __init__(self):
         """
@@ -137,17 +128,5 @@ class Manager():
         self.results = pool.map(self.processes_video, c.VID_KEYS)
 
 
-# In[4]:
-
 manager = Manager()
-
-
-# In[5]:
-
 manager.processes_videos()
-
-
-# In[ ]:
-
-
-

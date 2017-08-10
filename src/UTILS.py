@@ -1,4 +1,6 @@
 import os
+
+
 def remove_file_contents(filepath):
     """
     clears the file located at filepath of all its contents
@@ -21,7 +23,7 @@ def append_to_file(filepath, data):
         
 def clear_DS(file, filepath):
     """
-    Clears the automatically created .DS_Store files that OSX Finder creates
+    clears the automatically created .DS_Store files that OSX Finder creates
 
     :param file: the name of the file
     :type  file: string

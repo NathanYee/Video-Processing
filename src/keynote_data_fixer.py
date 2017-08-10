@@ -1,9 +1,5 @@
+# This is a one time use script to count and process result data to make nice graphs of my results
 
-# coding: utf-8
-
-# This is a one time use notebook to count an process result data to make nice graphs of my results
-
-# In[1]:
 
 test_imgs ={'BENTHOCODON': 286,
  'CYSTECHINUS_LOVENI': 40,
@@ -23,8 +19,6 @@ test_imgs ={'BENTHOCODON': 286,
  'bg': 0}
 
 
-# In[2]:
-
 train_imgs = {'BENTHOCODON': 569,
  'CYSTECHINUS_LOVENI': 174,
  'ECHINOCREPIS': 82,
@@ -43,13 +37,7 @@ train_imgs = {'BENTHOCODON': 569,
  'TJALFIELLA': 230,
  'bg': 0}
 
-
-# In[13]:
-
 sum([train_imgs[key] for key in train_imgs.keys()])
-
-
-# In[3]:
 
 imagenet_ap = {'BENTHOCODON': 0.805137016516,
 'ONEIROPHANTA_MUTABILIS_COMPLEX': 0.458815192744,
@@ -67,9 +55,6 @@ imagenet_ap = {'BENTHOCODON': 0.805137016516,
 'PENIAGONE_SP_A': 0.978279800281,
 'FUNGIACYATHUS_MARENZELLERI': 0.386287047543}
 
-
-# In[4]:
-
 most_epoch_ap = {'CYSTECHINUS_LOVENI': 0.643499906799,
 'ONEIROPHANTA_MUTABILIS_COMPLEX': 0.248599910394,
 'SCOTOPLANES_GLOBOSA': 0.948805921186,
@@ -86,13 +71,7 @@ most_epoch_ap = {'CYSTECHINUS_LOVENI': 0.643499906799,
 'PENIAGONE_SP_A': 0.987186066252,
 'PENIAGONE_VITRAE': 0.376280487988}
 
-
-# In[5]:
-
 keys = set(most_epoch_ap.keys()) & set(imagenet_ap.keys()) & set(test_imgs.keys()) & set(train_imgs.keys())
-
-
-# In[6]:
 
 print(" ,Number of Training Images, Number of Testing Images, Imagenet AP, Most Epoch AP")
 for key in keys:
@@ -102,23 +81,15 @@ for key in keys:
     max_epch_ap = most_epoch_ap[key]
     print("{},{},{},{},{}".format(key, num_train, num_test, imgnet_ap, max_epch_ap))
 
-
-# In[7]:
-
 all_keys = set(most_epoch_ap.keys()) | set(imagenet_ap.keys()) | set(test_imgs.keys()) | set(train_imgs.keys())
-
-
-# In[8]:
 
 all_keys.remove('bg')
 
 
-# In[9]:
-
 list(all_keys)
 
 
-# In[ ]:
+
 
 
 

@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import os
 import CONSTANTS as c
 import IMAGEUTILS as im
@@ -10,8 +5,6 @@ import UTILS as u
 import pickle
 from time import sleep
 
-
-# In[2]:
 
 class Deinterlacer():
     
@@ -130,13 +123,5 @@ class Deinterlacer():
             sleep(self.sleep_time)
 
 
-# In[3]:
-
 deinterlacer = Deinterlacer()
 deinterlacer.process_files()
-
-
-# In[ ]:
-
-
-

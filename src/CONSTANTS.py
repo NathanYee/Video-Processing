@@ -52,8 +52,8 @@ for VID in VID_KEYS:
     DIR_DICT[VID][SRC_VID]      = '{}{}/{}{}'.format(SOURCE_DIR, VID, VID, VID_EXT)
     
 # path for simple annotation for Keras frcnn
-ANN_PATH = BASE_DIR + 'simple_annotations.txt'
-TEST_ANN_PATH = BASE_DIR + 'test_simple_annotations.txt'
+ANN_PATH      = os.path.join(BASE_DIR, 'simple_annotations.txt')
+TEST_ANN_PATH = os.path.join(BASE_DIR, 'test_simple_annotations.txt')
 
 # crop directories
 CROP_DIR = os.path.join(BASE_DIR, 'crops')

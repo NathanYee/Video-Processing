@@ -1,11 +1,7 @@
-
-# coding: utf-8
-
 # # Training Mean
 # 
-# This notebook calculates the mean (by color channel) of the training images. This value put in the keras-frcnn config.py file for network training and testing.
-
-# In[1]:
+# This notebook calculates the mean (by color channel) of the training images.
+# This value is used in the keras-frcnn config.py file for network training and testing.
 
 import os
 import CONSTANTS as c
@@ -13,8 +9,6 @@ import IMAGEUTILS as im
 import XMLUTILS as xu
 import numpy as np
 
-
-# In[2]:
 
 class MeanFinder():
     """
@@ -107,13 +101,5 @@ class MeanFinder():
         return(np.mean(means, axis=(0)))
 
 
-# In[3]:
-
 train_mean = MeanFinder(c.TRAIN_VID_KEYS)
 print("Train mean: " + str(train_mean.process_files()))
-
-
-# In[ ]:
-
-
-

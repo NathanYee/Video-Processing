@@ -1,16 +1,9 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import os
 import CONSTANTS as c
 import IMAGEUTILS as im
 import XMLUTILS as xu
 import numpy as np
 
-
-# In[2]:
 
 class Cropper():
     """
@@ -130,13 +123,5 @@ class Cropper():
                 self.process_file_filepath(file, filepath)
 
 
-# In[3]:
-
 cropper = Cropper(c.VID_KEYS)
 cropper.process_files()
-
-
-# In[ ]:
-
-
-

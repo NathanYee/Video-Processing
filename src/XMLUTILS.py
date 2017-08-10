@@ -4,7 +4,7 @@ import CONSTANTS as c
 
 def open_xml_file(filename):
     """
-    extract root Element from xml file
+    extract root Element from a PASCAL VOC xml file
 
     :param filename: the xml file to be opened
     :type  filename: string
