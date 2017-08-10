@@ -32,3 +32,14 @@ def clear_DS(file, filepath):
     """
     if file == '.DS_Store':
         os.unlink(filepath)
+
+
+def make_dir(directory):
+    """
+    creates directory if it does not exist
+
+    :param directory: absolute path of target directory
+    :type  directory: string
+    """
+    if not os.path.isdir(directory):
+        os.mkdir(directory)

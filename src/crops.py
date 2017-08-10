@@ -123,5 +123,6 @@ class Cropper():
                 self.process_file_filepath(file, filepath)
 
 
-cropper = Cropper(c.VID_KEYS)
-cropper.process_files()
+if __name__ == '__main__':
+    cropper = Cropper(c.VID_KEYS)
+    cropper.process_files()

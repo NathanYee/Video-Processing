@@ -128,5 +128,6 @@ class Manager():
         self.results = pool.map(self.processes_video, c.VID_KEYS)
 
 
-manager = Manager()
-manager.processes_videos()
+if __name__ == '__main__':
+    manager = Manager()
+    manager.processes_videos()

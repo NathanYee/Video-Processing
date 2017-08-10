@@ -101,5 +101,6 @@ class MeanFinder():
         return(np.mean(means, axis=(0)))
 
 
-train_mean = MeanFinder(c.TRAIN_VID_KEYS)
-print("Train mean: " + str(train_mean.process_files()))
+if __name__ == '__main__':
+    train_mean = MeanFinder(c.TRAIN_VID_KEYS)
+    print("Train mean: " + str(train_mean.process_files()))

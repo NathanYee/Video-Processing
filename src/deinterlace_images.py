@@ -7,7 +7,7 @@ from time import sleep
 
 
 class Deinterlacer():
-    
+
     def __init__(self, deint_pkl_file='done.pkl', base_dir=c.BASE_DIR):
         """
         all images must be deinterlaced before being used in the neural
@@ -123,5 +123,6 @@ class Deinterlacer():
             sleep(self.sleep_time)
 
 
-deinterlacer = Deinterlacer()
-deinterlacer.process_files()
+if __name__ == '__main__':
+    deinterlacer = Deinterlacer()
+    deinterlacer.process_files()

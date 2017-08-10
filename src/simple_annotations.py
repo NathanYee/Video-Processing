@@ -108,9 +108,9 @@ class SimpleAnnotator():
             if self.processed_file:
                 print("Processed: " + root)
 
+if __name__ == '__main__':
+    train_annotator = SimpleAnnotator(c.TRAIN_VID_KEYS, c.ANN_PATH)
+    train_annotator.process_files()
 
-train_annotator = SimpleAnnotator(c.TRAIN_VID_KEYS, c.ANN_PATH)
-train_annotator.process_files()
-
-test_annotator = SimpleAnnotator(c.TEST_VID_KEYS, c.TEST_ANN_PATH)
-test_annotator.process_files()
+    test_annotator = SimpleAnnotator(c.TEST_VID_KEYS, c.TEST_ANN_PATH)
+    test_annotator.process_files()
